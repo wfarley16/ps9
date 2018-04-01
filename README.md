@@ -8,7 +8,7 @@
 
 ---
 
-## Problem Set 10: Dots and Boxes
+## Problem Set 9: Dots and Boxes
 
 ### 10 Points
 
