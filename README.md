@@ -23,15 +23,15 @@ This is a pair problem set. If you don't have a partner in mind, you can use the
 
 ---
 
-In this problem set, you'll write a Java program that plays the game of [Dots and Boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes) (also see [here](https://www.math.ucla.edu/~tom/Games/dots&boxes.html)).  Dots and Boxes is a two-player game in which the players attempt to capture squares on a 2D grid by marking line segments. Players alternate selecting line segments. If a player closes off a square by marking its 4th line, that player claims that square and gets to select another line.
+In this problem set, you'll write a Java program that plays the game of [Dots and Boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes) (also see [here](https://www.math.ucla.edu/~tom/Games/dots&boxes.html)).  Dots and Boxes is a two-player game in which the players attempt to capture squares on a 2D grid by marking line segments. Players alternate selecting line segments. If a player closes off a square by marking its 4th line, that player claims that square and gets to select another line. The player capturing the most squares wins the game.
 
 <img src="./img/dotsandboxes.png" align=left style="width:700px" />
 
-The player that you write will compete against players written by other teams of students. In the above, the blue tiles denote squares that have been captured by player1, the `P1-East Dillon Lions`. The red tiles denote squares that have been captured by player2, the `CSCI 1102 Staff`. The yellow tile is just a visual aid denoting a square with 3 marked sides and which can be claimed by marking the line on the right (i.e., EAST).
+The player that you write will compete against players written by other teams of students from all three sections of CSCI 1102. In the above, the blue tiles denote squares that have been captured by player1, the `P1-East Dillon Lions`. The red tiles denote squares that have been captured by player2, the `CSCI 1102 Staff`. The yellow tile is just a visual aid denoting a square with 3 marked sides and which can be claimed by marking the line on the right (i.e., EAST).
 
 #### The Tournament
 
-Teams interested in participating can enter their player in the course tournament. If there are at least 32 teams participating, teams making it to the final 4 do not have to take the final exam. The winners will receive a full letter grade bump in their course grade (e.g., from a B to an A) while the second place finishers will receive a third of a letter-grade bump (e.g., from a B to a B+).
+Teams interested in participating can enter their player in the course tournament. If there are at least 32 teams participating, the members of the winning team will receive **A**s for CSCI 1102. The members of the second place team will receive a full letter grade bump for their course grade and are exempt from the final exam. Members of teams making the final 4 will receive a partial letter grade bump for their course grade. (E.g., B+ to A-.)
 
 ### The Code
 
@@ -176,4 +176,16 @@ The third input to the `makePlay` function is a long integer specifying how many
 
 We plan to publish at least one more version of the game on April 14. The final version will have bug fixes and a few new features to support tournament play. In addition, teams are invited to submit API requests for additional features or changes to the API. If these requests seem reasonable and we have time to implement them before April 14, we'll implement them. API requests should be submitted through Piazza or via email. 
 
+### What to Submit and How to Submit It
 
+##### What
+
+For the purposes of developing your player, you should be writing the code for **Player1** in the `players` package/subdirectory. When it comes time to submit your player, you should *rename your player* from `Player1.java` to `PlayerN.java` where `N` is the number on your line from the [tournament signup sheet](https://docs.google.com/spreadsheets/d/1zdbrgR6eO_hhVSew5Pc-iFs2L2BW8sJ0ivYG5zERCXA/edit#gid=0). For example, if Muller had signed up as in
+
+![signup](./img/playernumber.png)
+
+then Muller would be submitting a file named `Player20.java` which contained a public class named `Player20`.
+
+##### How
+
+Students in Muller's section should submit their players via a GitHub push to a `ps9-submission` repo. Instructions will follow. Students in Meng's sections should submit their players by uploading their PlayerN.java file to the course Canvas site. Instructions to follow from Prof. Meng.
