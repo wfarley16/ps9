@@ -25,10 +25,6 @@ public class Player4 implements Player {
   public Player1() {
     dbg = new DBG(DBG.PLAYERS, "Player1");
   }
-//  
-//  private boolean boardIsFull(Square[][] board) {
-//    
-//  }
   
   private void printBoard(Square[][] board) {
     for (int row = 0; row < Util.N; row++) {
