@@ -130,8 +130,11 @@ public class ControllerC extends Pane implements Controller {
       return this.player1;
     else if (i == 2 && this.player2 != null)
       return this.player2;
-    else
-      throw new RuntimeException("getPlayer: there is no player=" + i);
+    else {
+      RuntimeException e = new RuntimeException("getPlayer: there is no player=" + i);
+      System.out.println("Error: " + e.toString());
+      throw e;
+    }
   }
 
   // Various setters.
@@ -177,6 +180,7 @@ public class ControllerC extends Pane implements Controller {
       if(this.dbg.debug) dbg.println("makeHumanPlay: score=" + score);
     }
     catch (RuntimeException msg) {
+      System.out.println("Error" + msg.toString());
       modeReset(this.mode);
       controlDisplay.setStatus(msg.getMessage());
     }
@@ -199,6 +203,7 @@ public class ControllerC extends Pane implements Controller {
           dbg.println("stepResponder: player1 attempting to play " + line);
       }
       catch (Exception msg) {
+        System.out.println("Error: " + msg.toString());
         controlDisplay.setStatus(msg.getMessage());
       }
       try {
@@ -324,6 +329,7 @@ public class ControllerC extends Pane implements Controller {
         // We're probably here because the chosen line was already marked.
         // If so, the player that chose it loses the game.
         //
+        System.out.println("Error: " + e.toString());
         controlDisplay.setStatus(player.teamName() + " lost by rule violation.");
         service.cancel();
         return;
@@ -464,7 +470,8 @@ class PlayService extends Service<Line> {
         }
         catch (ExecutionException | TimeoutException | InterruptedException e) {
           future.cancel(true);
-          System.out.println("PlayService: in exception handler, terminated.");
+          System.out.println("Error: " + e.toString());
+//System.out.println("PlayService: in exception handler, terminated.");
           throw new Exception("Failed in timed task.");
         }
       }
@@ -640,16 +647,25 @@ class TimedTask implements Callable<Line> {
       players.atBat.getProgressBar().setProgress(progress);
 
       if (board.gameOver()) {
+        System.out.println("GAME OVER :)");
         showWinner(score, wins);
+        System.out.println("GAME OVER :)");
+        System.out.println(game);
+        System.out.println(games);
         if (game == games) {
+          System.out.println("Game == Games");
           service.cancel();
+          System.out.println("Service cancelled");
           controlDisplay.setStatus("The match is over.");
+          System.out.println("Status set");
           return;
         }
+        System.out.println("GAME OVER. Should be setting a new game");
         // OK, the last game is over but the match isn't. Play another one.
         // As written, the player atBat of game n, is atBat for game n+1.
         //
         playAnotherGame(service);
+        System.out.println("GAME OVER. Should be setting a new game");
       }
       else {
         filledASquare = !this.claimedSquares.isEmpty();

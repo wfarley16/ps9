@@ -11,7 +11,7 @@ public class Util {
   public static final int DEFAULT_DISPLAY_HEIGHT = 800;
   public static final double ASPECT_RATIO = 1.618;
 
-  public static final double DEFAULT_SECONDS = 0.5;
+  public static final double DEFAULT_SECONDS = 2.5;
   public static final long DEFAULT_TIMEOUT = ((long) (DEFAULT_SECONDS * 1000.0));    // 3 thousand milliseconds
 
   public static final Color NOCOLOR = new Color(.9, .9, .9, 1.0);
