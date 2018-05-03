@@ -15,8 +15,8 @@ import javafx.scene.paint.Color;
 public class Player4 implements Player {
   
   private DBG dbg;
-  private final int width = 3; //number of possible moves to get
-  private final int depth = 3; //number of moves to go into game tree logic
+  private final int width = 6; //number of possible moves to get
+  private final int depth = 6; //number of moves to go into game tree logic
   private final int mid = 100; //threshold for starting late game logic
   private final long minTime = 3; //minimum milliseconds left per move for us to switch to quick moves
   private int[] order = {3,1,0,2}; //order of priority in moves
